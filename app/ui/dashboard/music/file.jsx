@@ -3,7 +3,7 @@ import { Button } from "@mui/material";
 import { useEffect, useState } from "react";
 import { UploadFile } from "@mui/icons-material";
 
-function file() {
+function File() {
   const [filename, setFilename] = useState("فایلی انتخاب نشده است");
   return (
     <Button component="label" variant="contained">
