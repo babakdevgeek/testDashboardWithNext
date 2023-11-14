@@ -19,4 +19,4 @@ function File() {
   );
 }
 
-export default file;
+export default File;
