@@ -2,7 +2,7 @@ import CategoriesList from "./../../ui/dashboard/music/CategoriesList";
 import FavMusics from "./../../ui/dashboard/music/FavMusics";
 import RecentMusics from "./../../ui/dashboard/music/RecentMusics";
 import React from "react";
-import { Add } from "@mui/icons-material/add";
+import { Add } from "@mui/icons-material/Add";
 import LinkButton from "../../ui/dashboard/music/LinkButton";
 
 export default function page() {
