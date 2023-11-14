@@ -7,7 +7,7 @@ function File() {
   const [filename, setFilename] = useState("فایلی انتخاب نشده است");
   return (
     <Button component="label" variant="contained">
-      <UploadFile />
+      <UploadFile className="w-4" />
       <input
         type="file"
         hidden
