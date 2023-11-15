@@ -8,7 +8,7 @@ export default function page() {
   return (
     <div className="text-center flex flex-col gap-4">
       <LinkButton text="افزودن دستی موزیک" link="/dashboard/music/add">
-        <Add />
+        <Add className="text-xs" />
       </LinkButton>
       <RecentMusics />
       <FavMusics />
