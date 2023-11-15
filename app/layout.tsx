@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import localFont from "next/font/local";
-import ThemeRegistry from "./(theme)/ThemeRegistry";
-import RTL from "./(theme)/RTL";
+// import ThemeRegistry from "./(theme)/ThemeRegistry";
+// import RTL from "./(theme)/RTL";
 const IranianSans = localFont({
   src: "../public/fonts/IranianSans.ttf",
   display: "swap",
@@ -21,10 +21,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" dir="rtl">
-      <body className={IranianSans.className}>
-        <ThemeRegistry options={{ key: "mui" }}>
-          <RTL>{children}</RTL>
-        </ThemeRegistry>
+      <body className={`${IranianSans.className} text-white`}>
+        {/* <ThemeRegistry options={{ key: "mui" }}> */}
+        {/* <RTL> */}
+        {children}
+        {/* </RTL> */}
+        {/* </ThemeRegistry> */}
       </body>
     </html>
   );

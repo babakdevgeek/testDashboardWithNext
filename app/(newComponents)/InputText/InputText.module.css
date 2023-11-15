@@ -1,0 +1,19 @@
+.input:focus + label,
+.input:not(:placeholder-shown) + label {
+  bottom: 3.2rem;
+  transition: all 0.2s ease;
+  border-color: transparent;
+  color: #ff5c0a;
+  z-index: 1;
+  font-size: 0.8rem;
+}
+.input + label {
+  pointer-events: none;
+}
+.input {
+  box-shadow: 1px 1px 4px #292828, -1px -1px 4px #292828;
+  z-index: 2;
+}
+.input:focus {
+  outline: 2px solid orange;
+}
