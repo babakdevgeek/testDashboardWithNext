@@ -17,6 +17,10 @@ const config: Config = {
         "next-orange": "#ff5c0a",
         "next-deep-black": "#1c1c1c",
         "next-green": "#238207",
+        "front-purple": "#4b2874",
+        "front-blue": "#193266",
+        "front-white": "#fffcf2",
+        "front-action": "#e9edc9",
       },
       boxShadow: {
         "next-shadow": "box-shadow: 1px 1px 4px #292828, -1px -1px 4px #292828",
