@@ -21,7 +21,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" dir="rtl">
-      <body className={`${IranianSans.className} text-white`}>
+      <body
+        className={`${IranianSans.className} text-white bg-next-deep-black`}
+      >
         {/* <ThemeRegistry options={{ key: "mui" }}> */}
         {/* <RTL> */}
         {children}
