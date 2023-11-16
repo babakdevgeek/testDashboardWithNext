@@ -30,17 +30,17 @@ export default function CategoryCoursel() {
     sliderRef.addEventListener("mousedown", handleMouseDown);
     sliderRef.addEventListener("mousemove", handleMouseMove);
     sliderRef.addEventListener("mouseup", handleMouseUp);
-    sliderRef.addEventListener("OnTouch", handleMouseDown);
-    sliderRef.addEventListener("onTouchEnd", handleMouseUp);
-    sliderRef.addEventListener("onTouchMove", handleMouseMove);
+    sliderRef.addEventListener("touchstart", handleMouseDown);
+    sliderRef.addEventListener("touchend", handleMouseUp);
+    sliderRef.addEventListener("touchmove", handleMouseMove);
 
     return () => {
       sliderRef.removeEventListener("mousedown", handleMouseDown);
       sliderRef.removeEventListener("mousemove", handleMouseMove);
       sliderRef.removeEventListener("mouseup", handleMouseUp);
-      sliderRef.removeEventListener("OnTouch", handleMouseDown);
-      sliderRef.removeEventListener("onTouchEnd", handleMouseUp);
-      sliderRef.removeEventListener("onTouchMove", handleMouseMove);
+      sliderRef.removeEventListener("touchstart", handleMouseDown);
+      sliderRef.removeEventListener("touchend", handleMouseUp);
+      sliderRef.removeEventListener("touchmove", handleMouseMove);
     };
   }, []);
 

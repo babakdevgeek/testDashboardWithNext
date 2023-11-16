@@ -5,7 +5,7 @@ export default function Navbar() {
     <>
       <header className="p-4 text-center">
         <h1 className="mb-4">موزیک اوشن پلتفرم اشتراک ودانلود موزیک</h1>
-        <nav className="flex gap-4 justify-center items-center">
+        <nav className="flex gap-2 justify-center items-center">
           <FrontLinkButton text={"ثبت نام"} link={"/signup"} style={"x"} />
           <FrontLinkButton text={"ورود"} link={"/login"} />
           <ActionButton
