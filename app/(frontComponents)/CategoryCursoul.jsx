@@ -12,13 +12,19 @@ export default function CategoryCoursel() {
 
     const handleMouseDown = (e) => {
       isDown.current = true;
-      startX.current = e.pageX - sliderRef.offsetLeft;
+      startX.current =
+        e.pageX - sliderRef.offsetLeft ||
+        e.touches[0].pageX - sliderRef.offsetLeft;
       scrollLeft.current = sliderRef.scrollLeft;
     };
-
+    const handleTouch = (e) => {
+      console.log(e);
+    };
     const handleMouseMove = (e) => {
       if (!isDown.current) return;
-      const x = e.pageX - sliderRef.offsetLeft;
+      const x =
+        e.pageX - sliderRef.offsetLeft ||
+        e.touches[0].pageX - sliderRef.offsetLeft;
       const walk = x - startX.current;
       sliderRef.scrollLeft = scrollLeft.current - walk;
     };
@@ -32,6 +38,7 @@ export default function CategoryCoursel() {
     sliderRef.addEventListener("mouseup", handleMouseUp);
     sliderRef.addEventListener("touchstart", handleMouseDown);
     sliderRef.addEventListener("touchend", handleMouseUp);
+    sliderRef.addEventListener("touchcancel", handleMouseUp);
     sliderRef.addEventListener("touchmove", handleMouseMove);
 
     return () => {
@@ -40,6 +47,7 @@ export default function CategoryCoursel() {
       sliderRef.removeEventListener("mouseup", handleMouseUp);
       sliderRef.removeEventListener("touchstart", handleMouseDown);
       sliderRef.removeEventListener("touchend", handleMouseUp);
+      sliderRef.removeEventListener("touchcancel", handleMouseUp);
       sliderRef.removeEventListener("touchmove", handleMouseMove);
     };
   }, []);
