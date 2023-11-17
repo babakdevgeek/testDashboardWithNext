@@ -6,11 +6,13 @@ export default function CategoryCoursel() {
   let isDown = useRef(false);
   let scrollLeft = useRef(null);
   let startX = useRef(null);
+  let elementWidth = useRef(null);
 
   useEffect(() => {
     const sliderRef = carousel.current;
 
     const handleMouseDown = (e) => {
+      elementWidth = e.target.offsetWidth || e.touches[0].target.offsetWidth;
       isDown.current = true;
       startX.current =
         e.pageX - sliderRef.offsetLeft ||
@@ -26,11 +28,13 @@ export default function CategoryCoursel() {
         e.pageX - sliderRef.offsetLeft ||
         e.touches[0].pageX - sliderRef.offsetLeft;
       const walk = x - startX.current;
-      sliderRef.scrollLeft = scrollLeft.current - walk;
+      if (walk > -50) sliderRef.scrollLeft = scrollLeft.current - elementWidth;
+      if (walk < -50) sliderRef.scrollLeft = scrollLeft.current + elementWidth;
     };
 
     const handleMouseUp = () => {
       isDown.current = false;
+      // console.log(scrollLeft.cu);
     };
 
     sliderRef.addEventListener("mousedown", handleMouseDown);

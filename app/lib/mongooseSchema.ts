@@ -5,10 +5,10 @@ mongoose.connect(process.env.URI);
 const Schema = mongoose.Schema;
 const mySchema = new Schema(
   {
-    musicNmae: String,
-    musicFile: String,
-    artist: String,
-    genre: String,
+    musicName: { type: String, required: true },
+    musicFile: { type: String, required: true },
+    artist: { type: String, required: true },
+    genre: { type: String, required: true },
     user: {
       type: String,
       default: "admin",
@@ -16,4 +16,5 @@ const mySchema = new Schema(
   },
   { timestamps: true }
 );
-export const model = mongoose.models.music || mongoose.model("music", mySchema);
+export const model =
+  mongoose.models.musicData || mongoose.model("musicData", mySchema);
