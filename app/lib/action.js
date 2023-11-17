@@ -17,7 +17,7 @@ export async function action(formdata) {
   const name = parsedName.name;
   const newName =
     name + "-" + Date.now() + Math.floor(Math.random() * 9e3) + ext;
-  const p = path.join("./uploads", newName);
+  const p = path.join("./app/uploads/", newName);
   fs.writeFile(p, buffer, (err) => err && console.error(err));
   const newDoc = new model({
     musicName: form.musicName,
